@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Allura';
+  src: url('../fonts/Allura/Allura-Regular.ttf') format('woff2'),
+    url('../fonts/Allura/Allura-Regular.ttf') format('woff');
+}
+
+img {
+  object-fit: cover;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+}
+html.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
