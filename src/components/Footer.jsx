@@ -12,24 +12,24 @@ const Footer = () => {
 
         <ul className="flex mt-4 gap-2">
           <div className="ok">
-            <li className="bg-gray-800 p-2">
+            <li className="">
               <NavLink
                 to=""
-                className="font-extrabold text-neutral-200 no-underline"
+                className="font-extrabold text-gray-800 no-underline"
               >
                 Bafoussam
               </NavLink>
             </li>
-            <li className="bg-gray-800 my-2 p-2">
+            <li className="">
               <NavLink
                 to=""
-                className="font-extrabold text-neutral-200 no-underline"
+                className="font-extrabold text-gray-800-200 no-underline"
               >
                 Yaoundé
               </NavLink>
             </li>
-            <li className="p-2 my-2 bg-gray-800">
-              <NavLink to="" className="text-neutral-200 b no-underline">
+            <li className="">
+              <NavLink to="" className="text-gray-800-200  no-underline">
                 Douala
               </NavLink>
             </li>
