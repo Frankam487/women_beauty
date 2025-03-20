@@ -9,7 +9,7 @@ const CardsProducts = () => {
       name: "Huiles Naturelles",
       stars: 3,
       image:
-        "https://cdn.pixabay.com/photo/2017/06/07/12/19/oil-2388255_1280.jpg",
+        "../../public/oils.jpg",
       description:
         "Des huiles 100% naturelles pour nourrir et hydrater votre peau.",
       link: "./",
@@ -19,7 +19,7 @@ const CardsProducts = () => {
       name: "Savons Artisanaux",
       stars: 4,
       image:
-        "https://cdn.pixabay.com/photo/2016/11/29/06/15/soap-1863850_1280.jpg",
+        "./savon.jpg",
       description:
         "Savons faits à la main, doux et parfumés pour une peau éclatante.",
       link: "./",
@@ -29,7 +29,7 @@ const CardsProducts = () => {
       name: "Gels Douche",
       stars: 5,
       image:
-        "https://cdn.pixabay.com/photo/2020/01/13/14/38/shower-gel-4762950_1280.jpg",
+        "./gels.jpg",
       description:
         "Offrez-vous un moment de fraîcheur et de détente sous la douche.",
       link: "./",
@@ -48,7 +48,7 @@ const CardsProducts = () => {
       name: "Pommades Capillaires",
       stars: 3,
       image:
-        "https://cdn.pixabay.com/photo/2016/03/05/20/08/hair-dresser-1232256_1280.jpg",
+        "./pommades.jpg",
       description:
         "Pommades nourrissantes pour des cheveux forts et brillants.",
       link: "./",
@@ -58,7 +58,7 @@ const CardsProducts = () => {
       name: "Lotions Hydratantes",
       stars: 5,
       image:
-        "https://cdn.pixabay.com/photo/2017/07/28/14/28/cosmetics-2549746_1280.jpg",
+        "lotions.jpg",
       description: "Lotions hydratantes pour une peau douce et éclatante.",
       link: "./",
     },
@@ -68,6 +68,36 @@ const CardsProducts = () => {
       stars: 4,
       image:
         "https://cdn.pixabay.com/photo/2016/11/21/12/53/cream-1840438_1280.jpg",
+      description:
+        "Des crèmes riches en vitamines pour une peau protégée et éclatante.",
+      link: "./",
+    },
+    {
+      id: 8,
+      name: "deodorents",
+      stars: 4,
+      image:
+        "./deodorents.jpg",
+      description:
+        "Des crèmes riches en vitamines pour une peau protégée et éclatante.",
+      link: "./",
+    },
+    {
+      id: 9,
+      name: "Parfums",
+      stars: 4,
+      image:
+        "./parfums.jpg",
+      description:
+        "Des crèmes riches en vitamines pour une peau protégée et éclatante.",
+      link: "./",
+    },
+    {
+      id: 10,
+      name: "deodorents",
+      stars: 4,
+      image:
+        "./deodorents.jpg",
       description:
         "Des crèmes riches en vitamines pour une peau protégée et éclatante.",
       link: "./",
