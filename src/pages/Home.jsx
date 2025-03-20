@@ -1,4 +1,3 @@
-
 import { NavLink } from "react-router-dom";
 import Footer from "../components/Footer";
 
@@ -60,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home

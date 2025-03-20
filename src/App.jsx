@@ -26,7 +26,7 @@ import Passion3 from "./pages/Passion3";
 import Passion4 from "./pages/Passion4";
 import PreEtirees from "./pages/PreEtirees";
 import Reserver from "./pages/Reserver";
-import Services from "./pages/Products";
+import Products from "./pages/Products";
 import Soft from "./pages/Soft";
 import Soft1 from "./pages/Soft1";
 import Soft2 from "./pages/Soft2";
@@ -72,7 +72,7 @@ const App = () => {
         <Route path="/preEtirees" element={<PreEtirees />} />
         <Route path="/twist" element={<Twist />} />
         <Route path="/reserver" element={<Reserver />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/produit/:id" element={<ProductDetails />} />
       </Routes>
    <WhatsAppButton />

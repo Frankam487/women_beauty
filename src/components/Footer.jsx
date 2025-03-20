@@ -1,81 +1,84 @@
-
-import { NavLink } from 'react-router-dom';
-import Icons from './Icons';
+import { NavLink } from "react-router-dom";
+import Icons from "./Icons";
 
 const Footer = () => {
   return (
-    <div className="footer bg-gray-350">
-      <div className="emplacement">
-        <h2 className="font-semibold text-center -mx-3 text-[22px]">
-          Emplacement
-        </h2>
-
-        <ul className="flex mt-4 gap-2">
-          <div className="ok">
-            <li className="">
-              <NavLink
-                to=""
-                className="font-extrabold text-gray-800 no-underline"
-              >
-                Bafoussam
-              </NavLink>
-            </li>
-            <li className="">
-              <NavLink
-                to=""
-                className=" no-underline"
-              >
-                Yaoundé
-              </NavLink>
-            </li>
-            <li className="">
-              <NavLink to="" className="text-gray-800-200  no-underline">
-                Douala
-              </NavLink>
-            </li>
-          </div>
+    <div className="footer my-5 bg-white py-8">
+      {/* Section Emplacement */}
+      <div className="emplacement text-center bg-white mb-8">
+        <h2 className="font-semibold text-[22px] mb-4">Emplacement</h2>
+        <ul className="flex justify-center gap-6 flex-wrap">
+          <li>
+            <NavLink
+              to=""
+              className="font-extrabold text-gray-800 no-underline hover:text-gray-600 transition duration-300"
+              aria-label="Emplacement à Bafoussam"
+            >
+              Bafoussam
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to=""
+              className="text-gray-800 no-underline hover:text-gray-600 transition duration-300"
+              aria-label="Emplacement à Yaoundé"
+            >
+              Yaoundé
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to=""
+              className="text-gray-800 no-underline hover:text-gray-600 transition duration-300"
+              aria-label="Emplacement à Douala"
+            >
+              Douala
+            </NavLink>
+          </li>
         </ul>
       </div>
-      <div className="hours">
-        <h2 className="text-[19px] font-semibold">Horaires d'ouverture</h2>
 
-        <div className="horaires">
-          <span className="un">Du lundi à samedi</span> <br />
-          <span className="un">de 9h00 à 19h00</span>
-          <br />
-          <div className="troiss">
-            <span className="deux">
-              {" "}
-              jeudi, <br />
-              9h00 - 20h00
-            </span>
-          </div>
-          <span className="trois">
-            Samedi, <br />
-            9h30 - 17h00
-          </span>
+      {/* Section Horaires d'ouverture */}
+      <div className="hours text-center mb-8">
+        <h2 className="font-semibold text-[19px] mb-4">Horaires d'ouverture</h2>
+        <div className="horaires text-lg">
+          <p className="mb-2">
+            <span className="font-semibold">Du lundi au samedi :</span> de 9h00 à 19h00
+          </p>
+          <p className="mb-2">
+            <span className="font-semibold">Jeudi :</span> 9h00 - 20h00
+          </p>
+          <p>
+            <span className="font-semibold">Samedi :</span> 9h30 - 17h00
+          </p>
         </div>
       </div>
-      <div className="contact">
-        <h2 className="text-[22px] font-semibold">Contact</h2>
+
+      {/* Section Contact */}
+      <div className="contact text-center mb-8">
+        <h2 className="font-semibold text-[22px] mb-4">Contact</h2>
         <div className="infos">
-          <h4
-            className="text-lg
-         "
-          >
+          <h4 className="text-lg">
             <a
-              className="text-black"
               href="mailto:fkamgang06@gmail.com"
-              target="_blank"
+              className="text-black no-underline hover:text-gray-600 transition duration-300"
+              aria-label="Envoyer un email à fkamgang06@gmail.com"
             >
               fkamgang06@gmail.com
             </a>
           </h4>
-          <h3 className="underline  text-[19px] decoration-gray-500">
+          <h3 className="underline text-[19px] decoration-gray-500 mt-2">
             +237 690 46 18 30
           </h3>
-          <Icons />
+          <div className="social-icons mt-4">
+            <Icons />
+          </div>
         </div>
+      </div>
+
+      {/* Footer Bottom (optionnel, copyright ou autres liens) */}
+      <div className="footer-bottom text-center text-sm text-gray-600 mt-8">
+        <p>&copy; 2025 Votre Entreprise. Tous droits réservés.</p>
       </div>
     </div>
   );

@@ -50,7 +50,7 @@ const Header = () => {
             Accueil
           </NavLink>
           <NavLink
-            to="/produits"
+            to="/products"
             className={({ isActive }) =>
               `no-underline font-semibold text-rose-600 transition-all duration-300 ease-in-out px-4 py-2 ${
                 isActive
