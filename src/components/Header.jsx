@@ -114,7 +114,7 @@ const Header = () => {
               Accueil
             </NavLink>
             <NavLink
-              to="/produits"
+              to="/products"
               className={({ isActive }) =>
                 `text-rose-600 text-lg font-semibold no-underline transition-all duration-300 ${
                   isActive
