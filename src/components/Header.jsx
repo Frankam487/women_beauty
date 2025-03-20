@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa"; // Icônes pour le menu hamburger
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,51 +76,70 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Menu Mobile */}
+      {/* Menu Mobile (Drawer) */}
       <div
-        className={`lg:hidden fixed inset-0 bg-rose-900 bg-opacity-95 transition-opacity duration-300 ease-in-out ${
+        className={`lg:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+        onClick={toggleMenu} // Ferme le menu en cliquant à l'extérieur
       >
         <div
-          className={`flex flex-col items-center justify-center h-full space-y-8 transition-transform duration-300 ${
-            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()} // Empêche la fermeture au clic dans le menu
         >
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `text-white text-xl font-semibold no-underline transition-all duration-300 ${
-                isActive ? "text-rose-300" : "hover:text-rose-300 hover:scale-105"
-              }`
-            }
+          {/* Bouton de fermeture dans le drawer */}
+          <button
+            className="absolute top-4 right-4 p-2 text-rose-700 focus:outline-none"
             onClick={toggleMenu}
+            aria-label="Close menu"
           >
-            Accueil
-          </NavLink>
-          <NavLink
-            to="/produits"
-            className={({ isActive }) =>
-              `text-white text-xl font-semibold no-underline transition-all duration-300 ${
-                isActive ? "text-rose-300" : "hover:text-rose-300 hover:scale-105"
-              }`
-            }
-            onClick={toggleMenu}
-          >
-            Produits
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `text-white text-xl font-semibold no-underline transition-all duration-300 ${
-                isActive ? "text-rose-300" : "hover:text-rose-300 hover:scale-105"
-              }`
-            }
-            onClick={toggleMenu}
-          >
-            Contact
-          </NavLink>
+            <FaTimes className="h-6 w-6" />
+          </button>
+
+          {/* Contenu du menu */}
+          <div className="flex flex-col items-start p-6 mt-16 space-y-6">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-rose-600 text-lg font-semibold no-underline transition-all duration-300 ${
+                  isActive
+                    ? "text-rose-800 underline decoration-rose-400 decoration-2"
+                    : "hover:text-rose-800 hover:underline hover:decoration-rose-400"
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              Accueil
+            </NavLink>
+            <NavLink
+              to="/produits"
+              className={({ isActive }) =>
+                `text-rose-600 text-lg font-semibold no-underline transition-all duration-300 ${
+                  isActive
+                    ? "text-rose-800 underline decoration-rose-400 decoration-2"
+                    : "hover:text-rose-800 hover:underline hover:decoration-rose-400"
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              Produits
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `text-rose-600 text-lg font-semibold no-underline transition-all duration-300 ${
+                  isActive
+                    ? "text-rose-800 underline decoration-rose-400 decoration-2"
+                    : "hover:text-rose-800 hover:underline hover:decoration-rose-400"
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              Contact
+            </NavLink>
+          </div>
         </div>
       </div>
     </header>

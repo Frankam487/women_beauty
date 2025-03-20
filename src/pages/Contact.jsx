@@ -1,127 +1,156 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import "animate.css";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [feedbackMessage, setFeedbackMessage] = useState(""); // Pour afficher les messages de retour
-  const [feedbackType, setFeedbackType] = useState(""); // Type de message (succès ou erreur)
+  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [feedbackType, setFeedbackType] = useState("");
 
-  const handleNameChange = (e) => setName(e.target.value);
-  const handleMessageChange = (e) => setMessage(e.target.value);
+  // Configuration de React Hook Form
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      message: "",
+    },
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le comportement par défaut du formulaire
+  // Fonction de soumission du formulaire
+  const onSubmit = (data) => {
+    // Numéro WhatsApp (remplace par ton numéro au format international sans espaces ni '+')
+    const phoneNumber = "237690461830"; // Exemple : ton numéro
 
-    // Vérifier si les champs sont remplis
-    if (name === "" || message === "") {
-      setFeedbackMessage("Tous les champs doivent être remplis !"); // Message d'erreur
-      setFeedbackType("error"); // Définir le type d'erreur
-      return; // Arrêter l'exécution si un champ est vide
-    }
+    // Message pré-rempli
+    const whatsappMessage = encodeURIComponent(
+      `Nouveau message de contact - NaturaSkin\n\nNom: ${data.name}\nMessage: ${data.message}`
+    );
 
-    // Création du lien mailto avec les informations remplies
-    const emailTo = "fkamgangang06@gmail.com"; // L'adresse email du destinataire
-    const subject = encodeURIComponent("Hey I've a question!!!"); // Sujet de l'email
-    const body = encodeURIComponent(`
-      Nom: ${name}
-      Message: ${message}
-    `); // Corps de l'email avec les informations de l'utilisateur
+    // Lien WhatsApp
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 
-    // Générer le lien mailto
-    const mailtoLink = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+    // Redirection vers WhatsApp
+    window.open(whatsappLink, "_blank");
 
-    // Ouvrir le client de messagerie avec le lien mailto
-    window.location.href = mailtoLink;
+    // Feedback utilisateur
+    setFeedbackMessage("Merci ! Votre message a été envoyé sur WhatsApp.");
+    setFeedbackType("success");
+    reset(); // Réinitialise le formulaire
 
-    // Affichage du message de succès
-    setFeedbackMessage("Merci ! Votre message a bien été envoyé."); // Message de succès
-    setFeedbackType("success"); // Définir le type de succès
+    // Effacer le feedback après 5 secondes
+    setTimeout(() => {
+      setFeedbackMessage("");
+      setFeedbackType("");
+    }, 5000);
   };
 
   return (
-    <div className="min-h-screen my-8 bg-gray-50 flex flex-col items-center py-16 px-6">
-      <div className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-8">
-        <h2 className="text-3xl font-semibold text-teal-800 text-center mb-6">
+    <div className="min-h-screen my-8 bg-gradient-to-r from-rose-50 via-rose-100 to-rose-200 flex flex-col items-center py-16 px-6">
+      <div className="max-w-4xl w-full bg-white shadow-lg rounded-xl p-8">
+        <h2 className="text-3xl md:text-4xl font-semibold text-rose-700 text-center mb-8 animate__animated animate__fadeInDown">
           Contactez-Nous
         </h2>
 
-        {/* Affichage des messages de retour (succès ou erreur) */}
+        {/* Feedback */}
         {feedbackMessage && (
           <div
-            className={`p-4 mb-6 text-center rounded-lg ${
+            className={`p-4 mb-6 text-center rounded-lg animate__animated animate__fadeIn ${
               feedbackType === "success"
-                ? "bg-green-200 text-green-800"
-                : "bg-red-200 text-red-800"
+                ? "bg-rose-100 text-rose-800"
+                : "bg-red-100 text-red-800"
             }`}
           >
             {feedbackMessage}
           </div>
         )}
 
-        {/* Section des inputs */}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Formulaire */}
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-2">
-            <label htmlFor="name" className="block text-lg text-teal-600">
+            <label
+              htmlFor="name"
+              className="block text-lg font-medium text-rose-600"
+            >
               Votre Nom
             </label>
             <input
-              type="text"
               id="name"
-              value={name}
-              onChange={handleNameChange}
-              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              {...register("name", { required: "Ce champ est requis" })}
+              className={`w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 transition-all duration-300 ${
+                errors.name
+                  ? "border-red-300 focus:ring-red-400"
+                  : "border-rose-200 focus:ring-rose-400"
+              }`}
               placeholder="Entrez votre nom"
-              required
+              aria-invalid={errors.name ? "true" : "false"}
             />
+            {errors.name && (
+              <p className="text-red-600 text-sm">{errors.name.message}</p>
+            )}
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="message" className="block text-lg text-teal-600">
+            <label
+              htmlFor="message"
+              className="block text-lg font-medium text-rose-600"
+            >
               Votre Message
             </label>
             <textarea
               id="message"
-              value={message}
-              onChange={handleMessageChange}
+              {...register("message", { required: "Ce champ est requis" })}
               rows="5"
-              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className={`w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 transition-all duration-300 ${
+                errors.message
+                  ? "border-red-300 focus:ring-red-400"
+                  : "border-rose-200 focus:ring-rose-400"
+              }`}
               placeholder="Dites-nous ce que vous avez en tête"
-              required
+              aria-invalid={errors.message ? "true" : "false"}
             />
+            {errors.message && (
+              <p className="text-red-600 text-sm">{errors.message.message}</p>
+            )}
           </div>
 
           <div className="flex justify-center mt-6">
             <button
               type="submit"
-              className="bg-teal-600 text-white px-8 py-2 rounded-lg hover:bg-teal-700 transition duration-300 ease-in-out"
+              disabled={isSubmitting}
+              className={`px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300 ${
+                isSubmitting
+                  ? "bg-rose-400 text-white cursor-not-allowed"
+                  : "bg-rose-600 text-white hover:bg-rose-700"
+              }`}
             >
-              Envoyer
+              {isSubmitting ? "Envoi en cours..." : "Envoyer via WhatsApp"}
             </button>
           </div>
         </form>
 
-
+        {/* Coordonnées */}
         <div className="mt-12 space-y-8">
-          <h3 className="text-2xl font-semibold text-teal-800">
+          <h3 className="text-2xl font-semibold text-rose-700">
             Nos Coordonnées
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-6 text-rose-600">
             <div className="flex items-center space-x-4">
-              <FaPhoneAlt className="text-teal-600 text-2xl" />
-              <span className="text-xl text-gray-700">+237 690 461 830</span>
+              <FaPhoneAlt className="text-rose-600 text-2xl" />
+              <span className="text-lg text-gray-700">+237 690 461 830</span>
             </div>
             <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-teal-600 text-2xl" />
-              <span className="text-xl text-gray-700">
+              <FaEnvelope className="text-rose-600 text-2xl" />
+              <span className="text-lg text-gray-700">
                 fkamgang06@gmail.com
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-teal-600 text-2xl" />
-              <span className="text-xl text-gray-700">
-               Bafoussam TPO
-              </span>
+              <FaMapMarkerAlt className="text-rose-600 text-2xl" />
+              <span className="text-lg text-gray-700">Bafoussam TPO</span>
             </div>
           </div>
         </div>
