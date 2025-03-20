@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa"; // Icônes pour le menu hamburger
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,87 +10,114 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-transparent text-white shadow-lg fixed top-0 left-0 w-full z-50 backdrop-blur-lg">
+    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div translate="no" className="text-4xl font-bold tracking-wide">
+        {/* Logo */}
+        <div translate="no" className="text-3xl font-bold tracking-wider">
           <NavLink
             to="/"
-            className="no-underline text-gray-700 font-bold tracking-wide"
+            className="no-underline text-rose-700 hover:text-rose-800 transition-colors duration-300"
           >
-            <span className="text-4xl font-bold" translate="no">
-              NaturaSkin
-            </span>
-            
+            NaturaSkin
           </NavLink>
         </div>
 
+        {/* Bouton Menu Mobile */}
         <button
-          className="lg:hidden p-2 text-black focus:outline-none"
+          className="lg:hidden p-2 text-rose-700 focus:outline-none"
           onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-7 w-7 transition-all duration-300 ease-in-out transform hover:scale-125"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+          {isMenuOpen ? (
+            <FaTimes className="h-7 w-7 transition-transform duration-300 hover:scale-110" />
+          ) : (
+            <FaBars className="h-7 w-7 transition-transform duration-300 hover:scale-110" />
+          )}
         </button>
 
-        <nav className="hidden lg:flex space-x-8">
+        {/* Navigation Desktop */}
+        <nav className="hidden lg:flex space-x-10">
           <NavLink
             to="/"
-            className="text-gray-900 no-underline font-bold transition duration-300 ease-in-out hover:text-yellow-500 hover:scale-105 hover:underline decoration-2 px-4 py-2"
+            className={({ isActive }) =>
+              `no-underline font-semibold text-rose-600 transition-all duration-300 ease-in-out px-4 py-2 ${
+                isActive
+                  ? "text-rose-800 underline decoration-rose-400 decoration-2"
+                  : "hover:text-rose-800 hover:underline hover:decoration-rose-400 hover:decoration-2"
+              }`
+            }
           >
             Accueil
           </NavLink>
-
           <NavLink
-            to="/services"
-            className="text-gray-900 no-underline font-bold transition duration-300 ease-in-out hover:text-yellow-500 hover:scale-105 hover:underline decoration-2 px-4 py-2"
+            to="/produits"
+            className={({ isActive }) =>
+              `no-underline font-semibold text-rose-600 transition-all duration-300 ease-in-out px-4 py-2 ${
+                isActive
+                  ? "text-rose-800 underline decoration-rose-400 decoration-2"
+                  : "hover:text-rose-800 hover:underline hover:decoration-rose-400 hover:decoration-2"
+              }`
+            }
           >
-            Services
+            Produits
           </NavLink>
-
           <NavLink
             to="/contact"
-            className="text-gray-900 no-underline font-bold transition duration-300 ease-in-out hover:text-yellow-500 hover:scale-105 hover:underline decoration-2 px-4 py-2"
+            className={({ isActive }) =>
+              `no-underline font-semibold text-rose-600 transition-all duration-300 ease-in-out px-4 py-2 ${
+                isActive
+                  ? "text-rose-800 underline decoration-rose-400 decoration-2"
+                  : "hover:text-rose-800 hover:underline hover:decoration-rose-400 hover:decoration-2"
+              }`
+            }
           >
             Contact
           </NavLink>
         </nav>
       </div>
 
-      {/* Menu mobile */}
+      {/* Menu Mobile */}
       <div
-        className={`lg:hidden bg-black bg-opacity-80 fixed top-0 left-0 w-full h-full transition-all duration-300 ease-in-out ${isMenuOpen ? "block" : "hidden"}`}
-        onClick={() => setIsMenuOpen(false)}
+        className={`lg:hidden fixed inset-0 bg-rose-900 bg-opacity-95 transition-opacity duration-300 ease-in-out ${
+          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
       >
-        <div className="flex flex-col items-center bg-gradient-to-t from-gray-900 to-black py-24 justify-center space-y-6">
+        <div
+          className={`flex flex-col items-center justify-center h-full space-y-8 transition-transform duration-300 ${
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+          onClick={(e) => e.stopPropagation()} // Empêche la fermeture au clic dans le menu
+        >
           <NavLink
             to="/"
-            className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:underline px-6 py-2 no-underline"
+            className={({ isActive }) =>
+              `text-white text-xl font-semibold no-underline transition-all duration-300 ${
+                isActive ? "text-rose-300" : "hover:text-rose-300 hover:scale-105"
+              }`
+            }
+            onClick={toggleMenu}
           >
-            Acceuil
+            Accueil
           </NavLink>
-
           <NavLink
-            to="/services"
-            className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:text-yellow-500 hover:underline px-6 py-2 no-underline"
+            to="/produits"
+            className={({ isActive }) =>
+              `text-white text-xl font-semibold no-underline transition-all duration-300 ${
+                isActive ? "text-rose-300" : "hover:text-rose-300 hover:scale-105"
+              }`
+            }
+            onClick={toggleMenu}
           >
-            Services
+            Produits
           </NavLink>
-
           <NavLink
             to="/contact"
-            className="text-white text-lg transform transition duration-300 ease-in-out hover:scale-110 hover:text-yellow-500 hover:underline px-6 py-2 no-underline"
+            className={({ isActive }) =>
+              `text-white text-xl font-semibold no-underline transition-all duration-300 ${
+                isActive ? "text-rose-300" : "hover:text-rose-300 hover:scale-105"
+              }`
+            }
+            onClick={toggleMenu}
           >
             Contact
           </NavLink>

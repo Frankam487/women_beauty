@@ -23,7 +23,7 @@ const Footer = () => {
             <li className="">
               <NavLink
                 to=""
-                className="font-extrabold text-gray-800-200 no-underline"
+                className=" no-underline"
               >
                 Yaoundé
               </NavLink>

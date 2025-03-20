@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
+import ProductDetails from "./components/ProductDetails";
 import WhatsAppButton from "./components/WhatsappButton";
 import Box from "./pages/Box";
 import Classiques from "./pages/Classiques";
@@ -25,7 +26,7 @@ import Passion3 from "./pages/Passion3";
 import Passion4 from "./pages/Passion4";
 import PreEtirees from "./pages/PreEtirees";
 import Reserver from "./pages/Reserver";
-import Services from "./pages/Services";
+import Services from "./pages/Products";
 import Soft from "./pages/Soft";
 import Soft1 from "./pages/Soft1";
 import Soft2 from "./pages/Soft2";
@@ -37,7 +38,7 @@ import TwistLong from "./pages/TwistLong";
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <Header  />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
@@ -72,10 +73,9 @@ const App = () => {
         <Route path="/twist" element={<Twist />} />
         <Route path="/reserver" element={<Reserver />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/produit/:id" element={<ProductDetails />} />
       </Routes>
-   
-      <WhatsAppButton />
-      
+   <WhatsAppButton />
     </BrowserRouter>
   );
 };
