@@ -3,7 +3,7 @@ import Icons from "./Icons";
 
 const Footer = () => {
   return (
-    <div className="footer my-5 bg-white py-8">
+    <div className="footer mt-12 bg-white py-8 px-4">
       {/* Section Emplacement */}
       <div className="emplacement text-center bg-white mb-8">
         <h2 className="font-semibold text-[22px] mb-4">Emplacement</h2>

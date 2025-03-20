@@ -10,8 +10,8 @@ const productsList = [
     name: "Crème Hydratante",
     category: "Soins de la peau",
     description: "Crème hydratante pour peau sèche, nourrissante et apaisante.",
-    price: 25, // Prix en nombre pour faciliter les calculs
-    currency: "CHF",
+    price: 2500, // Prix en nombre pour faciliter les calculs
+    currency: "FCFA",
     imageUrl: "./creme-hydratante.jpg",
     rating: 4.5,
     stock: 10, // Ajout de la gestion de stock
@@ -21,8 +21,8 @@ const productsList = [
     name: "Rouge à lèvres Mat",
     category: "Maquillage",
     description: "Rouge à lèvres longue tenue, effet mat et couvrance parfaite.",
-    price: 18,
-    currency: "CHF",
+    price: 1800,
+    currency: "FCFA",
     imageUrl: "./rouge-levres-mat.jpg",
     rating: 4.8,
     stock: 5,
@@ -32,19 +32,19 @@ const productsList = [
     name: "Shampooing Nourrissant",
     category: "Soins capillaires",
     description: "Shampooing hydratant pour cheveux secs et abîmés.",
-    price: 15,
-    currency: "CHF",
+    price: 1500,
+    currency: "FCFA",
     imageUrl: "./shampooing-nourrissant.jpg",
     rating: 4.2,
-    stock: 0, // Produit en rupture
+    stock: 0, 
   },
   {
     id: 4,
     name: "Fond de Teint",
     category: "Maquillage",
     description: "Fond de teint léger et fluide pour un teint naturel.",
-    price: 30,
-    currency: "CHF",
+    price: 1000,
+    currency: "FCFA",
     imageUrl: "./fond-de-teint.jpg",
     rating: 4.7,
     stock: 8,
@@ -55,7 +55,7 @@ const productsList = [
     category: "Soins de la peau",
     description: "Sérum anti-âge avec effet liftant et raffermissant.",
     price: 55,
-    currency: "CHF",
+    currency: "FCFA",
     imageUrl: "./serum-anti-age.jpg",
     rating: 4.9,
     stock: 3,
@@ -71,7 +71,7 @@ const Products = () => {
       : productsList.filter((product) => product.category === filter);
 
   return (
-    <div className="min-h-screen my-24 flex flex-col items-center bg-gradient-to-r from-rose-50 via-rose-100 to-rose-200 p-6">
+    <div className=" my-24 flex flex-col items-center bg-gradient-to-r from-rose-50 via-rose-100 to-rose-200 p-6">
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-rose-700 mb-4 animate__animated animate__fadeInDown">
           Nos Produits de Beauté
@@ -155,7 +155,7 @@ const Products = () => {
           </div>
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
