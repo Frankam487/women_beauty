@@ -37,6 +37,7 @@ import TwistCourt from "./pages/TwistCourt";
 import TwistLong from "./pages/TwistLong";
 import CardsProducts from "./components/CardsProducts";
 import PorductDetails from "./components/PorductDetails";
+import Shop from "./components/Shop";
 
 const App = () => {
   return (
@@ -79,6 +80,7 @@ const App = () => {
         <Route path="/produit/:id" element={<ProductDetails />} />
         <Route path="/products/:id" element={<PorductDetails />} />
         <Route path="/" element={<CardsProducts />} />
+        <Route path="/boutique" element={<Shop />} />
       </Routes>
    <WhatsAppButton />
     </BrowserRouter>

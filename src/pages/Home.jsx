@@ -149,7 +149,7 @@ const Home = () => {
 
         <div className="text-center my-12">
           <button className="bg-gray-900   text-white px-6 py-3 no-underline shadow-md hover:bg-gray-700 transition">
-            <NavLink to="/services" className="no-underline text-white font-bold font-serif">Accéder à la Boutique</NavLink>
+            <NavLink to="/boutique" className="no-underline text-white font-bold font-serif">Accéder à la Boutique</NavLink>
           </button>
         </div>
 
