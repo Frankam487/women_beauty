@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import "animate.css";
 import { NavLink } from "react-router-dom";
-import Footer from "../components/Footer";
+
 
 const productsList = [
   {
@@ -10,11 +10,11 @@ const productsList = [
     name: "Crème Hydratante",
     category: "Soins de la peau",
     description: "Crème hydratante pour peau sèche, nourrissante et apaisante.",
-    price: 2500, // Prix en nombre pour faciliter les calculs
+    price: 2500, 
     currency: "FCFA",
     imageUrl: "./creme-hydratante.jpg",
     rating: 4.5,
-    stock: 10, // Ajout de la gestion de stock
+    stock: 10, 
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const productsList = [
     description: "Rouge à lèvres longue tenue, effet mat et couvrance parfaite.",
     price: 1800,
     currency: "FCFA",
-    imageUrl: "./rouge-levres-mat.jpg",
+    imageUrl: "",
     rating: 4.8,
     stock: 5,
   },
@@ -34,7 +34,7 @@ const productsList = [
     description: "Shampooing hydratant pour cheveux secs et abîmés.",
     price: 1500,
     currency: "FCFA",
-    imageUrl: "./shampooing-nourrissant.jpg",
+    imageUrl: "./shampiong.jpg",
     rating: 4.2,
     stock: 0, 
   },
@@ -54,7 +54,7 @@ const productsList = [
     name: "Sérum Anti-âge",
     category: "Soins de la peau",
     description: "Sérum anti-âge avec effet liftant et raffermissant.",
-    price: 55,
+    price: 350,
     currency: "FCFA",
     imageUrl: "./serum-anti-age.jpg",
     rating: 4.9,
@@ -101,13 +101,13 @@ const Products = () => {
         {filteredProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition-all duration-300 p-6 animate__animated animate__fadeInUp"
+            className=" rounded-xl shadow-md hover:shadow-xl hover:scale-105 transform transition-all duration-300 p-6 animate__animated animate__fadeInUp"
           >
             <img
               src={product.imageUrl}
               alt={`Image de ${product.name}`}
               loading="lazy"
-              className="w-full h-48 object-cover rounded-lg mb-4"
+              className="w-full h-1/2 object-cover  mb-4"
             />
             <h2 className="text-xl font-semibold text-rose-600 truncate">
               {product.name}

@@ -35,6 +35,9 @@ import Twist from "./pages/Twist";
 import TwistClassique from "./pages/TwistClassique";
 import TwistCourt from "./pages/TwistCourt";
 import TwistLong from "./pages/TwistLong";
+import CardsProducts from "./components/CardsProducts";
+import PorductDetails from "./components/PorductDetails";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -74,6 +77,8 @@ const App = () => {
         <Route path="/reserver" element={<Reserver />} />
         <Route path="/products" element={<Products />} />
         <Route path="/produit/:id" element={<ProductDetails />} />
+        <Route path="/products/:id" element={<PorductDetails />} />
+        <Route path="/" element={<CardsProducts />} />
       </Routes>
    <WhatsAppButton />
     </BrowserRouter>

@@ -231,7 +231,7 @@ const Contact = () => {
               },
               {
                 icon: <FaMapMarkerAlt className="text-rose-600 text-3xl" />,
-                text: "Bafoussam TPO",
+                text: "Cameroun",
               },
             ].map((item, index) => (
               <motion.div
@@ -262,7 +262,7 @@ const Contact = () => {
         </motion.div>
       </motion.div>
 
-      {/* Animation personnalisée pour Tailwind */}
+      
       <style jsx global>{`
         @keyframes float {
           0%, 100% { transform: translateY(0); }

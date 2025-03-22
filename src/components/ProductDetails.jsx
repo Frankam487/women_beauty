@@ -8,7 +8,7 @@ import Footer from "./Footer";
 const productsList = [
   {
     id: 1,
-    name: "Crème Hydratante",
+    name: "Crème Hydratantee",
     category: "Soins de la peau",
     description: "Crème hydratante pour peau sèche, nourrissante et apaisante.",
     detailedDescription:
@@ -50,8 +50,8 @@ const productsList = [
     detailedDescription:
       "Un shampooing doux enrichi en huile d'argan et kératine pour réparer les cheveux abîmés et leur redonner de la brillance.",
     price: 15,
-    currency: "CHF",
-    imageUrl: "./shampooing-nourrissant.jpg",
+    currency: "FCFA",
+    imageUrl: "../../public/shampiong2.jpg",
     rating: 4.2,
     stock: 0,
     ingredients: ["Huile d'argan", "Kératine", "Extrait de camomille"],
@@ -67,8 +67,9 @@ const productsList = [
     description: "Fond de teint léger et fluide pour un teint naturel.",
     detailedDescription:
       "Ce fond de teint offre une couvrance modulable avec une formule non comédogène adaptée à tous les types de peaux.",
-    price: 30,
-    currency: "CHF",
+    price: 3000,
+   
+    currency: "FCFA",
     imageUrl: "./fond-de-teint.jpg",
     rating: 4.7,
     stock: 8,
@@ -85,8 +86,8 @@ const productsList = [
     description: "Sérum anti-âge avec effet liftant et raffermissant.",
     detailedDescription:
       "Un sérum puissant avec du rétinol et des peptides pour réduire les rides et améliorer l'élasticité de la peau.",
-    price: 55,
-    currency: "CHF",
+    price: 5000,
+    currency: "FCFA",
     imageUrl: "./serum-anti-age.jpg",
     rating: 4.9,
     stock: 3,
@@ -118,7 +119,7 @@ const ProductDetails = () => {
       <div className="max-w-4xl w-full bg-white rounded-xl shadow-lg p-8 animate__animated animate__fadeIn">
         {/* Bouton Retour */}
         <NavLink
-          to="/produits"
+          to="/products"
           className="flex items-center text-rose-600 hover:text-rose-700 font-semibold mb-6 no-underline"
         >
           <FaArrowLeft className="mr-2" /> Retour aux produits
@@ -131,7 +132,7 @@ const ProductDetails = () => {
             src={product.imageUrl}
             alt={`Image de ${product.name}`}
             loading="lazy"
-            className="w-full h-96 object-cover rounded-lg shadow-md"
+            className="w-full h-98 object-cover rounded-lg shadow-md"
           />
 
           {/* Détails */}
