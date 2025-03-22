@@ -97,13 +97,12 @@ const productsData = [
 ];
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Récupère l'ID depuis l'URL
-  const product = productsData.find((p) => p.id === parseInt(id)); // Trouve le produit correspondant
+  const { id } = useParams(); 
+  const product = productsData.find((p) => p.id === parseInt(id)); 
 
-  // Si le produit n'est pas trouvé
   if (!product) {
     return (
-      <div className="p-8 text-center">
+      <div className="py-10-8 text-center">
         <h1 className="text-2xl font-bold text-gray-800">Produit non trouvé</h1>
         <Link
           to="/"
@@ -117,7 +116,7 @@ const ProductDetails = () => {
 
   return (
     <motion.div
-      className="p-8 max-w-4xl mx-auto bg-gray-100 mt-8 rounded-lg shadow-lg"
+      className="p-8 mt-28 max-w-4xl mx-auto bg-gray-450 rounded-lg shadow-lg"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
