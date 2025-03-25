@@ -4,7 +4,7 @@ import Icons from "./Icons";
 const Footer = () => {
   return (
     <div className="footer mt-12 bg-white py-8 px-4">
-      {/* Section Emplacement */}
+
       <div className="emplacement text-center bg-white mb-8">
         <h2 className="font-semibold text-[22px] mb-4">Emplacement</h2>
         <ul className="flex justify-center gap-6 flex-wrap">
@@ -38,7 +38,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      {/* Section Horaires d'ouverture */}
+     
       <div className="hours text-center mb-8">
         <h2 className="font-semibold text-[19px] mb-4">Horaires d'ouverture</h2>
         <div className="horaires text-lg">
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Section Contact */}
+      
       <div className="contact text-center mb-8">
         <h2 className="font-semibold text-[22px] mb-4">Contact</h2>
         <div className="infos">
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom (optionnel, copyright ou autres liens) */}
+     
       <div className="footer-bottom text-center text-sm text-gray-600 mt-8">
         <p>&copy; 2025 Votre Entreprise. Tous droits réservés.</p>
       </div>
