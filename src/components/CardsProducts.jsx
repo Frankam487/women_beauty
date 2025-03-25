@@ -48,12 +48,11 @@ const ProductCard = ({ product }) => {
   );
 };
 
-// Composant principal avec pagination
 const CardsProducts = ({ products = [] }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4; // Nombre de produits par page
+  const itemsPerPage = 4; 
 
-  // Calcul pour la pagination
+
   const totalPages = Math.ceil(products.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);

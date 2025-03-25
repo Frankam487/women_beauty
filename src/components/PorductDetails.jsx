@@ -10,7 +10,7 @@ const productsData = [
     stars: 3,
     image: "/oils.jpg",
     description: "Des huiles 100% naturelles pour nourrir et hydrater votre peau.",
-    price: 19.99, 
+    price: 2000, 
     details: "Fabriqué à partir d'ingrédients bio, sans parabènes ni sulfates.",
   },
   {
@@ -19,7 +19,7 @@ const productsData = [
     stars: 4,
     image: "/savon.jpg",
     description: "Savons faits à la main, doux et parfumés pour une peau éclatante.",
-    price: 9.99,
+    price: 1800,
     details: "Disponible en plusieurs parfums : lavande, citron, et rose.",
   },
   {
@@ -28,7 +28,7 @@ const productsData = [
     stars: 5,
     image: "/gels.jpg",
     description: "Offrez-vous un moment de fraîcheur et de détente sous la douche.",
-    price: 14.99,
+    price: 3000,
     details: "Formule hydratante avec extraits naturels.",
   },
   {
@@ -37,7 +37,7 @@ const productsData = [
     stars: 4,
     image: "https://cdn.pixabay.com/photo/2016/03/27/19/22/hair-1281059_1280.jpg",
     description: "Sublimez votre coiffure avec nos mèches de haute qualité.",
-    price: 29.99,
+    price: 2900,
     details: "Résistantes et faciles à coiffer, longueur : 20 pouces.",
   },
   {
@@ -46,7 +46,7 @@ const productsData = [
     stars: 3,
     image: "/pommades.jpg",
     description: "Pommades nourrissantes pour des cheveux forts et brillants.",
-    price: 12.99,
+    price: 1200,
     details: "Enrichie en huile d'argan et vitamine E.",
   },
   {
@@ -55,7 +55,7 @@ const productsData = [
     stars: 5,
     image: "/lotions.jpg",
     description: "Lotions hydratantes pour une peau douce et éclatante.",
-    price: 17.99,
+    price: 1300,
     details: "Texture légère, absorption rapide.",
   },
   {
@@ -64,7 +64,7 @@ const productsData = [
     stars: 4,
     image: "https://cdn.pixabay.com/photo/2016/11/21/12/53/cream-1840438_1280.jpg",
     description: "Des crèmes riches en vitamines pour une peau protégée et éclatante.",
-    price: 24.99,
+    price: 2000,
     details: "Protection contre les agressions extérieures.",
   },
   {
@@ -73,7 +73,7 @@ const productsData = [
     stars: 4,
     image: "/deodorants.jpg",
     description: "Restez frais toute la journée avec nos déodorants naturels.",
-    price: 8.99,
+    price: 1000,
     details: "Sans aluminium, longue tenue.",
   },
   {
@@ -82,7 +82,7 @@ const productsData = [
     stars: 4,
     image: "/parfums.jpg",
     description: "Des fragrances uniques pour une présence inoubliable.",
-    price: 39.99,
+    price: 2500,
     details: "Notes florales et boisées, 50ml.",
   },
   {
@@ -91,7 +91,7 @@ const productsData = [
     stars: 4,
     image: "/deodorants.jpg",
     description: "Protection efficace et naturelle contre les odeurs.",
-    price: 8.99,
+    price: 1000,
     details: "Formule vegan, testée dermatologiquement.",
   },
 ];
