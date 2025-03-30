@@ -75,7 +75,7 @@ const CardsProducts = ({ products = [] }) => {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          {/* Pagination */}
+          
           <div className="mt-8 flex justify-center gap-2">
             {Array.from({ length: totalPages }, (_, index) => (
               <button

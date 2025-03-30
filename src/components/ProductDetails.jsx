@@ -4,7 +4,6 @@ import { FaArrowLeft, FaShoppingCart, FaStar } from "react-icons/fa";
 import { NavLink, useParams } from "react-router-dom";
 import Footer from "./Footer";
 
-// Liste des produits (je réutilise la même liste que dans ton composant Products)
 const productsList = [
   {
     id: 1,
@@ -13,8 +12,8 @@ const productsList = [
     description: "Crème hydratante pour peau sèche, nourrissante et apaisante.",
     detailedDescription:
       "Formulée avec de l'acide hyaluronique et du beurre de karité, cette crème offre une hydratation intense pendant 24 heures. Idéale pour les peaux sensibles ou déshydratées.",
-    price: 25,
-    currency: "CHF",
+    price: 2500,
+    currency: "FCFA",
     imageUrl: "./creme-hydratante.jpg",
     rating: 4.5,
     stock: 10,
@@ -31,8 +30,8 @@ const productsList = [
     description: "Rouge à lèvres longue tenue, effet mat et couvrance parfaite.",
     detailedDescription:
       "Ce rouge à lèvres offre une tenue jusqu'à 12 heures sans retouche. Sa formule enrichie en vitamine E protège vos lèvres tout en offrant une couleur vibrante.",
-    price: 18,
-    currency: "CHF",
+    price: 1800,
+    currency: "FCFA",
     imageUrl: "./rouge-levres-mat.jpg",
     rating: 4.8,
     stock: 5,
@@ -49,7 +48,7 @@ const productsList = [
     description: "Shampooing hydratant pour cheveux secs et abîmés.",
     detailedDescription:
       "Un shampooing doux enrichi en huile d'argan et kératine pour réparer les cheveux abîmés et leur redonner de la brillance.",
-    price: 15,
+    price: 1500,
     currency: "FCFA",
     imageUrl: "../../public/shampiong2.jpg",
     rating: 4.2,
@@ -100,10 +99,9 @@ const productsList = [
 ];
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Récupère l'ID depuis l'URL
+  const { id } = useParams();
   const product = productsList.find((p) => p.id === parseInt(id));
 
-  // Si le produit n'existe pas
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-rose-50 via-rose-100 to-rose-200">
@@ -117,7 +115,7 @@ const ProductDetails = () => {
   return (
     <div className="min-h-screen my-24 flex flex-col items-center bg-gradient-to-r from-rose-50 via-rose-100 to-rose-200 p-6">
       <div className="max-w-4xl w-full bg-white rounded-xl shadow-lg p-8 animate__animated animate__fadeIn">
-        {/* Bouton Retour */}
+    
         <NavLink
           to="/products"
           className="flex items-center text-rose-600 hover:text-rose-700 font-semibold mb-6 no-underline"
@@ -160,7 +158,7 @@ const ProductDetails = () => {
             </p>
             <p className="text-rose-600 mb-6">{product.detailedDescription}</p>
 
-            {/* Ingrédients */}
+            
             <h3 className="text-lg font-semibold text-rose-700 mb-2">
               Ingrédients clés
             </h3>
@@ -170,7 +168,7 @@ const ProductDetails = () => {
               ))}
             </ul>
 
-            {/* Bouton Ajouter au Panier */}
+            
             <button
               disabled={product.stock === 0}
               className={`w-full px-6 py-3 rounded-lg font-semibold flex items-center justify-center transition-all ${
@@ -185,7 +183,6 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/* Avis */}
         <div className="mt-10">
           <h3 className="text-xl font-semibold text-rose-700 mb-4">
             Avis des clients
@@ -211,7 +208,7 @@ const ProductDetails = () => {
           )}
         </div>
       </div>
-      {/* <Footer /> */}
+      
     </div>
   );
 };

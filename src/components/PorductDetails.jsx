@@ -145,7 +145,7 @@ const ProductDetails = () => {
             </p>
             <p className="text-gray-700 mb-4">{product.details}</p>
             <p className="text-2xl font-semibold text-gray-800">
-              {product.price} €
+              {product.price} FCFA
             </p>
           </div>
           <div className="mt-6 flex gap-4">

@@ -6,7 +6,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar, FaSearch } from "react-icons/fa";
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Liste de produits avec images spécifiques (20 pour commencer)
+  
   const product = [
     {
       id: 1,
@@ -54,7 +54,7 @@ const Shop = () => {
       category: "Parfums",
       stars: 4.8,
       price: 30000,
-      image: "https://images.unsplash.com/photo-1596755939169-7d8785f71df8?q=80&w=400&auto=format&fit=crop", // Parfum floral
+      image: "https://images.unsplash.com/photo-1596755939169-7d8785f71df8?q=80&w=400&auto=format&fit=crop", 
       description: "Une fragrance élégante et envoûtante.",
       link: "/produit/5",
     },
@@ -64,7 +64,7 @@ const Shop = () => {
       category: "Pommades",
       stars: 3.5,
       price: 10000,
-      image: "https://images.unsplash.com/photo-1576867757603-2f495e91e9e2?q=80&w=400&auto=format&fit=crop", // Pommade ou beurre
+      image: "https://images.unsplash.com/photo-1576867757603-2f495e91e9e2?q=80&w=400&auto=format&fit=crop",
       description: "Renforce et fait briller vos cheveux.",
       link: "/produit/6",
     },
@@ -83,7 +83,7 @@ const Shop = () => {
       name: "Crème Anti-Âge",
       category: "Crèmes",
       stars: 4,
-      price: 20000,
+      price: 2000,
       image: "https://images.unsplash.com/photo-1594032190580-6fe514e32d70?q=80&w=400&auto=format&fit=crop", // Crème
       description: "Protège et rajeunit la peau.",
       link: "/produit/8",
@@ -93,7 +93,7 @@ const Shop = () => {
       name: "Parfum Bois de Santal",
       category: "Parfums",
       stars: 4.7,
-      price: 35000,
+      price: 3500,
       image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=400&auto=format&fit=crop", // Parfum boisé
       description: "Un parfum boisé et raffiné.",
       link: "/produit/9",
@@ -103,7 +103,7 @@ const Shop = () => {
       name: "Mèches Ondulées",
       category: "Mèches",
       stars: 4.2,
-      price: 28000,
+      price: 2800,
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=400&auto=format&fit=crop", // Mèches ondulées
       description: "Volume et élégance pour vos coiffures.",
       link: "/produit/10",
@@ -113,7 +113,7 @@ const Shop = () => {
       name: "Huile d’Argan",
       category: "Huiles",
       stars: 4.6,
-      price: 18000,
+      price: 1800,
       image: "https://images.unsplash.com/photo-1601049541289-9b1e8c2b5d48?q=80&w=400&auto=format&fit=crop", // Huile d’argan
       description: "Revitalise peau et cheveux.",
       link: "/produit/11",
@@ -210,7 +210,7 @@ const Shop = () => {
     },
   ];
 
-  // Étendre à 80 produits en répétant et modifiant légèrement
+
   const fullProducts = Array.from({ length: 80 }, (_, index) => {
     const baseProduct = products[index % products.length];
     return {
@@ -218,17 +218,17 @@ const Shop = () => {
       id: index + 1,
       name: `${baseProduct.name} ${index % products.length === 0 ? "" : `V${(index % products.length) + 1}`}`,
       link: `/produit/${index + 1}`,
-      price: baseProduct.price + Math.floor(Math.random() * 5000), // Variation de prix
+      price: baseProduct.price + Math.floor(Math.random() * 5000), 
     };
   });
 
-  // Filtrer les produits selon la recherche
+
   const filteredProducts = fullProducts.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     product.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Variants pour animations
+
   const sectionVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.8, staggerChildren: 0.05 } },
@@ -244,7 +244,6 @@ const Shop = () => {
     },
   };
 
-  // Fonction pour afficher les étoiles
   const renderStars = (rating) => {
     const stars = [];
     const ratingNum = parseFloat(rating);
